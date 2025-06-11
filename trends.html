@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trends – BingePal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+</head>
+<body class="bg-light">
+  <div id="navbar"></div>
+
+  <div class="container py-5">
+    <h2 class="mb-4 text-center">Trending Now</h2>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <select class="form-select" id="typeSelect" onchange="loadTrends()">
+          <option value="movie" selected>Movies</option>
+          <option value="anime">Anime</option>
+          <option value="series">TV Series</option>
+          <option value="game">Games</option>
+          <option value="book">Books</option>
+          <option value="manga">Manga</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <select class="form-select" id="rangeSelect">
+          <option value="7" selected>This Week</option>
+          <option value="30">This Month</option>
+          <option value="365">This Year</option>
+          <option value="0">All Time</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-dark w-100" onclick="loadTrends()">Load Trends</button>
+      </div>
+    </div>
+
+    <div class="container my-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="chart-container">
+            <canvas id="trendsChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-center text-muted mt-5 mb-3 small">© 2025 BingePal • A demo by remember2hydrate</footer>
+  <script src="js/init-navbar.js"></script>
+  <script src="js/trends.js"></script>
+</body>
+</html>
